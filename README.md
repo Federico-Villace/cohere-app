@@ -1,3 +1,3 @@
-# apps with CO:HERE AI
+## apps with CO:HERE AI
 
-## different difficulty apps to test co:here functionalities 
+#### different difficulty apps to test co:here functionalities 
