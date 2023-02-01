@@ -1,8 +1,8 @@
-import cohere from 'cohere-ai'
+const COHERE_API_KEY = "DDDvR4315GURC6C33KnG5ZdBpT6xt0zisDDJC9wk"
+const COHERE_API_GENERATE_URL = "https://api.cohere.ai/generate"
 
 export const fixMyEnglish = async (input) => {
-
-    const response = await cohere.generate({
+    const data = {
         model: "command-xlarge",
         prompt:
           `This is a spell checker generator. 
@@ -26,6 +26,19 @@ export const fixMyEnglish = async (input) => {
         presence_penalty: 0,
         stop_sequences: [],
         return_likelihoods: "NONE",
-      });
-      return response.body.generations[0].text
+      }
+    const response = await fetch(COHERE_API_GENERATE_URL, {
+        method: 'POST',
+        headers: {
+            Authorization: `BEARER ${COHERE_API_KEY}`,
+            'Content-Type': 'application/json', 
+            'Cohere-Version':'2022-12-06'
+        },
+        body: JSON.stringify(data)
+    }).then(res => res.json())
+
+    const {text} = response.generations[0]
+
+    return text.replace('--', '').trim()
+    
 } 
