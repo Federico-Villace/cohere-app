@@ -1,6 +1,8 @@
 <script>
   import { fixMyEnglish } from "../services/ai";
   import Loading from "./icons/Loading.svelte";
+  import { isValidInput } from "./Store.js";
+
   let promise = null;
 
   const handleClick = async () => {
@@ -16,9 +18,11 @@
 {#if promise === null}
   <button
     on:click={handleClick}
+    disabled={!$isValidInput}
     type="button"
-    disabled=""
-    class="py-2 px-4 bg-red-600 hover:bg-red-700 max-w-[100px] focus:ring-red-500 focus:ring-offset-red-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  opacity-70 cursor-pointer rounded-lg "
+    class={`py-2 px-4 bg-red-600 hover:bg-red-700 max-w-[100px] focus:ring-red-500 focus:ring-offset-red-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  opacity-70 cursor-pointer rounded-lg ${
+      !$isValidInput ? "pointer-events-none opacity-30" : ""
+    }`}
   >
     Fix it!
   </button>

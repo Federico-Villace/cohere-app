@@ -1,5 +1,27 @@
 const COHERE_API_KEY = "DDDvR4315GURC6C33KnG5ZdBpT6xt0zisDDJC9wk"
 const COHERE_API_GENERATE_URL = "https://api.cohere.ai/generate"
+const COHERE_API_DETECT_LANGUAGE = "https://api.cohere.ai/detect-language"
+
+export const checkEnglish = async  (input) =>{
+    const data = {
+        texts: [input]
+      }
+    
+      const { results } = await fetch(COHERE_API_DETECT_LANGUAGE, {
+        method: 'POST',
+        headers: {
+          Accept: 'application/json',
+          Authorization: `BEARER ${COHERE_API_KEY}`,
+          "Content-Type": 'application/json',
+          "Cohere-Version": '2022-12-06'
+        },
+        body: JSON.stringify(data)
+      }).then(res => res.json())
+    
+      const [{ language_code }] = results
+      return language_code === 'en'
+    }
+
 
 export const fixMyEnglish = async (input) => {
     const data = {

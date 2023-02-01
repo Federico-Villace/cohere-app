@@ -1,5 +1,6 @@
 ---
 import ButtonSubmit from "../components/ButtonSubmit.svelte";
+import TextArea from "../components/TextArea.svelte";
 import Layout from "../layouts/Layout.astro";
 ---
 
@@ -12,15 +13,7 @@ import Layout from "../layouts/Layout.astro";
         <img src="https://hatscripts.github.io/circle-flags/flags/uk.svg" width="48">
       </section>
     </header>
-    <label >
-      <textarea
-        class="flex-1 min-w-[400px] px-4 py-4 mt-6 text-base text-gray-700 font-extralight placeholder:text-gray-300 bg-white border border-gray-300 rounded-lg appearance-none focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
-        placeholder="Enter your english phrase."
-        name="comment"
-        id="result"
-        rows="6"
-        cols="40"></textarea>
-    </label>
+    <TextArea client:visible/>
     <ButtonSubmit client:visible/>
     
   </main>
