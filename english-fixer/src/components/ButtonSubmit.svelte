@@ -1,7 +1,7 @@
 <script>
   import { fixMyEnglish } from "../services/ai";
   import Loading from "./icons/Loading.svelte";
-  import { isValidInput } from "./store.js";
+  import { isValidInput } from "./Store.js";
 
   let promise = null;
 

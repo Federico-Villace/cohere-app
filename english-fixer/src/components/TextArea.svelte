@@ -1,6 +1,6 @@
 <script>
   import { checkEnglish } from "../services/ai";
-  import { isValidInput } from "./store";
+  import { isValidInput } from "./Store";
 
   const handleChange = async (e) => {
     const { value } = e.target;
