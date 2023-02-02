@@ -62,11 +62,11 @@ export const fixMyEnglish = async (input) => {
     }).then(res => res.json())
 
     const { text } = response.generations[0]
-    const length = input.length
-   
+    const length = input.length + 3 
+   console.log(text.slice(0, length))
 
     return text
-    .slice(0, length + 3 )
+    .slice(0, length)
     .replace('--', '')
     .trim()
     
