@@ -3,7 +3,6 @@
   import { isValidInput } from "./Store";
 
   const handleChange = async (e) => {
-    console.log("hola");
     const { value } = e.target;
     const isValid = value.length > 0;
     if (!isValid) {

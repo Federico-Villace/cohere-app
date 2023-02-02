@@ -26,20 +26,22 @@ export const checkEnglish = async  (input) =>{
 export const fixMyEnglish = async (input) => {
     const data = {
         model: "command-xlarge",
-        prompt:
-          `This is a spell checker generator. 
-          -- 
-          Incorrect sample: "I are good"
-          Correct sample: "I am good"
-          -- 
-          Incorrect sample: "You have ten years old"
-          Correct sample: "I are ten years old"
-          -- 
-          Incorrect sample: "I don't can't know"
-          Correct sample: "I don't know" 
-          --
-          Incorrect sample: "${input}"
-          Correct sample:`,
+        prompt:`This is a spell checker generator. 
+    -- 
+    Incorrect sample: "I are good"
+    Correct sample: "I am good"
+    -- 
+    Incorrect sample: "You have ten years old"
+    Correct sample: "I are ten years old"
+    -- 
+    Incorrect sample: "I don't can't know"
+    Correct sample: "I don't know" 
+    --
+    Incorrect sample: "Jelou, jau ar iu?"
+    Correct sample: "Hello, how are you?"
+    --
+    Incorrect sample: "${input}"
+    Correct sample:`,
         max_tokens: 300,
         temperature: 0.3,
         k: 0,
@@ -59,8 +61,14 @@ export const fixMyEnglish = async (input) => {
         body: JSON.stringify(data)
     }).then(res => res.json())
 
-    const {text} = response.generations[0]
+    const { text } = response.generations[0]
+    const length = input.length
+   
 
-    return text.replace('--', '').trim()
+    return text
+    .slice(0, length + 1 )
+    .replace('--', '')
+    .replaceAll('"', '')
+    .trim()
     
 } 
