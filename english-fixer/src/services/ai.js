@@ -68,7 +68,6 @@ export const fixMyEnglish = async (input) => {
     return text
     .slice(0, length + 1 )
     .replace('--', '')
-    .replaceAll('"', '')
     .trim()
     
 } 
