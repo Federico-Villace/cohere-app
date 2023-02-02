@@ -28,17 +28,14 @@ export const fixMyEnglish = async (input) => {
         model: "command-xlarge",
         prompt:`This is a spell checker generator. 
     -- 
-    Incorrect sample: "I are good"
-    Correct sample: "I am good"
+    Incorrect sample: "Chekin if now its working de way it should"
+    Correct sample: "Checking if now it's working the way it should"
     -- 
     Incorrect sample: "You have ten years old"
     Correct sample: "I are ten years old"
     -- 
     Incorrect sample: "I don't can't know"
     Correct sample: "I don't know" 
-    --
-    Incorrect sample: "Jelou, jau ar iu?"
-    Correct sample: "Hello, how are you?"
     --
     Incorrect sample: "${input}"
     Correct sample:`,
@@ -63,7 +60,7 @@ export const fixMyEnglish = async (input) => {
 
     const { text } = response.generations[0]
     const length = input.length + 3 
-   console.log(text.slice(0, length))
+    console.log(text.slice(0, length))
 
     return text
     .slice(0, length)
