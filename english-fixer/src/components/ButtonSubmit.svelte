@@ -9,10 +9,11 @@
     const text = document.getElementById("result").value;
     promise = fixMyEnglish(text);
     const value = await promise;
-
     document.getElementById("result").value = value;
     promise = null;
   };
+
+  export const text = "test with text";
 </script>
 
 {#if promise === null}
