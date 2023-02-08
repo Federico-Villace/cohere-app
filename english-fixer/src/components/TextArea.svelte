@@ -31,7 +31,7 @@
       name="comment"
       id="result"
       rows="3"
-      cols="40"
+      cols="35"
     />
   </label>
   <div class="flex flex-col items-center">
