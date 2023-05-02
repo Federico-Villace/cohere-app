@@ -1,0 +1,28 @@
+---
+import TextArea from "../components/TextArea.svelte";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Welcome to Fix my english.">
+  <main class="flex flex-col items-center justify-center bg-[url('/background/london.webp')] bg-cover h-screen">
+    <header>
+      <section class="flex flex-row items-center opacity-100"> 
+        <h2 class="mx-[20px] text-white"> Enter your english phrase or word</h2>
+      </section>
+    </header>
+    <TextArea client:visible/>
+    
+  </main>
+</Layout>
+
+<style>
+  main {
+    margin: auto;
+    padding: 1.5rem;
+  }
+  h2 {
+    font-size: 3rem;
+    font-weight: 400;
+    text-align-last: center;
+  }
+</style>

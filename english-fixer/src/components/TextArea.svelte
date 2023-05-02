@@ -26,7 +26,7 @@
   <label>
     <textarea
       on:input={handleChange}
-      class="flex-1 lg:min-w-[400px] md:min-w-[200px] px-4 py-4 mt-6 text-base text-gray-700 font-extralight placeholder:text-gray-300 bg-white border border-gray-300 rounded-lg appearance-none focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
+      class="flex-1 lg:min-w-[600px] md:min-w-[400px] px-4 py-4 mt-6 text-base text-gray-700 font-extralight placeholder:text-gray-300 bg-white border border-gray-300 rounded-lg appearance-none focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
       placeholder="Enter your english phrase."
       name="comment"
       id="result"

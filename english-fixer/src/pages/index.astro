@@ -1,32 +1,22 @@
 ---
-import ButtonSubmit from "../components/ButtonSubmit.svelte";
-import TextArea from "../components/TextArea.svelte";
 import Layout from "../layouts/Layout.astro";
+import ButtonRedirect from '../components/ButtonRedirect.svelte';
 ---
 
-<Layout title="Welcome to Fix my english.">
-  <main class="flex flex-col items-center justify-center bg-[url('/background/uk-flag.png')] h-screen">
-    <header>
-      <section class="flex flex-row items-center opacity-100"> 
-        <img src="https://hatscripts.github.io/circle-flags/flags/us.svg" width="48">
-        <h1 class="mx-[20px]"> Fix my english </h1>
-        <img src="https://hatscripts.github.io/circle-flags/flags/uk.svg" width="48">
-      </section>
-    </header>
-    <TextArea client:visible/>
-    
-  </main>
-</Layout>
+<Layout title='fix my english'>
+    <main class="flex flex-col items-center justify-center bg-cover bg-[url('/background/bigben.jpeg')] h-screen">
+      <header>
+        <section class="flex flex-col justify-center items-center mr-[50px]"> 
+          <h1 class="text-5xl antialiased font-medium text-white"> Welcome to Fix My English </h1>
+          <div class="flex flex-col justify-center items-center ml-[10px] mt-[20px] text-white">
+            <p> With this app you'll be able to correct your english grammar.</p>
+            <p> Just enter your prompt and let the IA fix it for you.</p>
+          </div>
+          <ButtonRedirect/> 
+        </section>
+      </header>
+      
+    </main>
+  </Layout>
 
-<style>
-  main {
-    margin: auto;
-    padding: 1.5rem;
-  }
-  h1 {
-    font-size: 3rem;
-    font-weight: 800;
-    margin: 0;
-    text-align-last: center;
-  }
-</style>
+
